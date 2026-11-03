@@ -5,61 +5,263 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Hello-World News</title>
     <style>
-      /* styling goes here*/
+
+    html {
+        scroll-behavior: smooth;
+    }
+
+    * {
+        font-family: "Helvetica Neue", "Arial" , sans-serif;
+    }
+
+    body {
+        margin: 0;    
+    }
+
+    .headline {
+        font-family:"American Typewriter", serif;
+    }
+
+    .wrapper {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .navigation {
+        background-color: rgb(236, 203, 75);
+        display: flex;
+        flex: 1;
+        align-items: center;
+        justify-content: center;
+        position: sticky;
+        top: 0px;
+    }
+    
+    .navigation-wrapper {
+        padding: 8px;
+        display: flex;
+        gap: 8px;
+    }
+        
+    .navigation-list {
+        list-style-type: none;
+        text-align: center;
+        display: flex;
+        flex-direction: row;
+        gap: 5px;
+        padding: 0;
+        margin: 10px 0;
+        flex-wrap: wrap;
+    }
+
+    .navigation-list > li {
+        display: flex;
+        align-items: center;
+    }
+
+    .navigation-list > li > a {
+        background-color: aliceblue;
+        padding: 2px 4px;
+        border-radius: 4px;  
+        display: inline-block;
+        text-decoration: none;
+        color: black;
+        transition: all;
+        transition-duration: 500ms;
+        font-size: small;
+    }
+
+    .navigation-list > li > a:hover {
+        background-color: rgb(208, 202, 202);
+    }
+
+    .navigation-list > li > a:active {
+        background-color: rgb(54, 51, 51);
+    }
+
+    .content-wrapper {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+    }
+
+    .content {
+        padding: 2rem;
+        max-width: 750px;
+    }
+
+    .impressum {
+        display: flex;
+        justify-content: end;
+        border-top: 1px solid;
+        font-size: 10px;
+    }
+
+    .ul_impressum {
+        list-style-type: none;
+    }
+
+    .logo-img-container {
+        max-height: 50px;
+        max-width: 50px;
+        width: 50%;
+        flex-shrink: 0;
+        overflow: hidden;
+    }
+
+    .logo-img {
+        width: 100%;
+        height: 100%;
+    }
+        
+    @media screen and (min-width: 768px) {
+        .wrapper {
+            flex-direction: row;
+        }
+
+        .content {
+            padding: 2rem;
+            max-width: 750px;
+        }
+            
+        .content-wrapper {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+        }
+
+        .logo-img-container {   
+            max-height: 220px;
+            max-width: 220px;
+            width: 100%;
+            flex-shrink: 0;
+        }
+
+        .logo-img {
+            width: 100%;
+            height: 100%;
+        }
+
+        .navigation {
+            background-color: rgb(236, 203, 75);
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: sticky;
+            top: 0px;
+            height: 100dvh;
+        }
+
+        .navigation-wrapper {
+            height: 200px;
+            padding: 0 40px;
+            align-items: center;
+        }
+    
+        .navigation-list {
+            list-style-type: none;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            padding: 0;
+            margin: 10px 0;
+        }
+        .navigation-list > li {
+            display: flex;
+            align-items: center;
+        }
+        .navigation-wrapper {
+            display: flex;
+            flex-direction: column;
+        }
+        .navigation-list > li > a {
+            background-color: aliceblue;
+            padding: 4px 8px;
+            border-radius: 4px;  
+            width: 75px;
+            display: inline-block;
+            text-decoration: none;
+            color: black;
+            transition: all;
+            transition-duration: 500ms;
+        }
+
+        .navigation-list > li > a:hover {
+            background-color: rgb(208, 202, 202);
+        }
+
+        .navigation-list > li > a:active {
+            background-color: rgb(54, 51, 51);
+        }
+    }   
     </style>
   </head>
-  <body>
-    <div class="content">
-      <section id="landing" class="section">
-        <h1>Hello-World 🌍 News</h1>
-        <p>Willkommen auf deinem Portal für Hyper-News!</p>
-        <p>
-          Hello-World News ist ein Online-Nachrichtenportal auf dem du immer
-          Aktuell bleiben kannst. Wir arbeiten mit Hochdruck rund um Uhr an den
-          besten Artikeln und liefern die diese perfekt formatiert auf dein
-          digitales Endgerät
-        </p>
-      </section>
-      <section id="categories" class="section">
-        <h2>Unsere Kategorien:</h2>
-        <ul>
-          <li>Food 🍕</li>
-          <li>Travel 🛫</li>
-          <li>Kaffee ☕️</li>
-          <li>Beauty 💅</li>
-        </ul>
-      </section>
-      <section id="about" class="section">
-        <h2>Hyper</h2>
-        <p>
-          Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-          nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
-          sed diam voluptua. At vero eos et accusam et justo duo dolores et ea
-          rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem
-          ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur
-          sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et
-          dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam
-          et justo duo dolores et ea rebum.
-        </p>
-        <h3>Was ist Hyper?</h3>
-        <ol>
-          <li>größer</li>
-          <li>lauter</li>
-          <li>weiter</li>
-          <li>🚀</li>
-        </ol>
-      </section>
-    </div>
-    <footer class="footer">
-      <div>
-        <h2>Impressum</h2>
-        <p>
-          Max Mustermann<br />
-          Musterstraße 11a<br />
-          231123 Musterstadt<br />
-          Tel: 0231/3123211
-        </p>
-      </div>
-    </footer>
-  </body>
+    <body>
+        <div class="wrapper">
+            <nav class="navigation">
+                <div class="navigation-wrapper">
+                    <div class="logo-img-container">
+                        <img class="logo-img" src="./assets/logo.png" alt="round logo of the Website saying Hello World News">
+                    </div>
+                    <ul class="navigation-list">    
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#kategorien">Kategorien</a></li>
+                        <li><a href="#hyper">Hyper</a></li>
+                        <li><a href="#lorem">Lorem</a></li>
+                    </ul>
+
+                </div>
+            </nav>
+            <div class="content-wrapper">
+                <div class="content">
+                    <h1 class="headline" id="home">Hello-World 🌍News </h1>
+                    <p>willkommen auf deinem Portal fuer Hyper-News!</p>
+                    <p>Im folgenden eine kleine Übersicht der wichtigsten HTML-Tags.
+                        Eine komplette Liste aller HMTL-Tags findest du hier. 
+                        Die Funktion einiger HTML-Tags werden wir auf Englisch erläutern um dichter am orginal Namen zu bleiben.
+                        <p>
+                            
+                    <hr />
+                    <h2 class="headline" id="kategorien">Unsere Kategorien:</h2>
+
+                    <ul>
+                        <li>Food</li>
+                        <li>Travel</li>
+                        <li>Kaffee</li>
+                        <li>Beauty</li>
+                    </ul>
+                    
+                    <hr />
+                    <h2 class="headline" id="hyper">Hyper</h2>
+                        <p>Lorem Ipsum Die Kernaufgabe von HTML ist es Textinhalte zu strukturieren. Dies geschieht mit den Tag's. Sie markieren die möglichen Abschnitte innerhalb einer Seite/Dokuments. Im oben abgebildeten Boilerplate einer HTML-Datei findest du bereits zwei unterschiedliche Tags. Das <html>-Tag sowie das <body>-Tag. Der Anfang eines Abschnittes wird mit einem öffnungs Tag markiert <body> und das Ende mit dem entsprechenden endungs Tag </body>. Der so marktierte Abschnitt nennt man (drumroll) den Body. Der Browser wird den gasamten darzustellenden Inhalt einer Webseite immer zwischen diesen beiden Tags suchen. Nun gibt es neben diesem eher Abstrakten Body auch noch etliche weitere HTML-Tags um Abschnitte zu spezifizieren die uns in der Darstellung das lesen erleichtern. Beispielsweise: Überschriften, Absätze, Tabellen, Listen... </p>
+                    
+                        <h3 class="headline">Was ist Hyper?</h3>
+                        <ol>
+                            <li>größer</li>
+                            <li>lauter</li>
+                            <li>weiter</li>
+                            <li>rakete</li>
+                            
+                        </ol>
+                        <h3 class="headline" id="lorem">Lorem Ipsum </h3>
+                        <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+                </div>
+            </div>
+        </div>
+
+
+        <footer class="impressum"> 
+            <div class="impressum-wrapper">
+                <h2 class="headline">Impressum</h2>
+                <ul class="ul_impressum">
+                    <li>Max Mustermann</li>
+                    <li>Musterstraße 11a</li>
+                    <li>23452 Musterstadt</li>
+                    <li>Tel 123456678</li>
+                </ul>
+            </div>
+        </footer> 
+    </body>
 </html>
